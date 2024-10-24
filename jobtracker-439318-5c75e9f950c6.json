@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "jobtracker-439318",
+  "private_key_id": "5c75e9f950c64e0f9fcb85aa84b480ebb05ae9e0",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDW8rtVYHbflN8b\nosDGjQkw01BpHHoeI8DpOMmv8DfQqT0cnas/CkcL3yQAy55ThXb1WK3JcnL8OOyQ\n9wvvR+CaZ3ZmP4oZcs4905yr5IAVI3/QfWZBDSKT9lTqTiW76mT311PwU5jgo8dz\n19nKgwh+tymJq8VS71M83/3kO9+3mf+bmldD5cKEEO8J8tHhWiOP3lV3ql2xNPo+\nuBnt54ydM4xdO8nwo4DAbXqte1id5YIQWRXomZtgun2hYu9vo1iPT0WOa+VoM7Sk\ng8dsjGlXpozkdICtyWQtjRp1nW+M76cgnWWM+pwAdSA8h6comUWyelbXoEfKJRuO\nSR/+9tYhAgMBAAECggEAFGaYF123Fpgad1Tig03APy81MO68G+d0kCYcxVsxLveb\nFl/UEKEE9nhcoksxGRgAHv/mSan4Rh5QfJ9H9ZNOutTiSMjTzn/GGZnfozRmICt8\n/nCib37jxuOQsmbNn8jawaehHryOdFazD9h/IiB+4kj30ypXiXwvvCW9wwdYP8R8\nVfiXd84R0DwBfEAJdkzZIakPtF4mNZnX9qi/uZavhMrjZ8aVB10HPvKksPLXKmdJ\nad4Oburh7fAw995B/YH7+OOAShQM77Oat+F/EhDmkeI7ol+vrY+oSfnluksNZ5Nt\nJbAWx9dOYikN+j8VEeUw5GPEmieXFWjzQyfEfpc3GQKBgQDrCQ9foO9pulZ0UhRm\n8y6CSar9HXGZ0yIShycmY8EIZZrXexrZdVF6femTcJ/OCm65qqLqRfg3wvymYat5\njuMAx28ZrQVKhg+CcfTXrH6RmsFPph8ZtyjCNBFWQuCCHeRCRf6USZ16VEYk1iuk\nyxI1zhG98nAHyKXF4UWLyG4jOQKBgQDqHvzuzWtHTJ/jYnut2k3/qBLY31QgQlmc\nGLp/qMZVfA81kDjeqcDNt3ODFDwN5ak8+knj4Sz32sroItnwsGC3T44Y+dlugtyk\nrPB4PSFsLwK3jT+sqZQcnwn9krgqbYtKI3k3h7tZwqMW+6h7GXrJGW1jHz4O/5ui\nFDaXebLCKQKBgAZ1fEere4jTRxbxPoBJxIhuD9Xe3kVU6QXLUwcaDK73Y9byGh3J\nvJB6L1YO7UVTQhG2H74CaDzYDetgmb7Ab3qRAHubJp8SqhByo0DeC6hisVdIAGjL\ngMI9fhB5zAOnYKN1mvZmQ36eHENc41wm/HwgCprGs89y8yNJ+ohJ3MT5AoGBAIXm\nFy7U2Wg70K4Roz65Pibbj3vtroWMrQdztSZR9qzpeSFfTMc8OwLsyunK5tXj5bj0\nRNJJ9JgE0EuXsyHPHmF45IIwU0S7H0onhpieDcF72Yf1BtfPXOBJrUMTaLULVcCf\nLTKvNF2PzgrU/3T4C5t8KW2pbqrRUceO2/IiLjSRAoGAVkXwPJcmyc4+5JRuEaV5\n+O1ebRHRM6bac//QRrRHY8kaGFuzK86vfqRR5QOPBUEgIEwe3ZOqlhBMovCKwpH7\n9fDhLKBuIwB6ZMFVaaS9/anJtbAHz/S54do2rgs5Sv3sGM+PmAlbJ+rQ5Ymt849T\nX3ZdVkQrzl+0Jbl4wrpJaOU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "jobtracker@jobtracker-439318.iam.gserviceaccount.com",
+  "client_id": "106303599501137657127",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/jobtracker%40jobtracker-439318.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
