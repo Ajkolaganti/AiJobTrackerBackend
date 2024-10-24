@@ -55,6 +55,8 @@ async function processWithAI(text, context = {}, fullTranscript = [], stream = t
         if (!sanitizedText) {
             throw new Error('Input text is required');
         }
+        console.log('inside processWithAI Input text:', sanitizedText);
+
 
         // Build conversation history
         let conversationContext = '';

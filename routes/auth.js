@@ -14,6 +14,7 @@ const openai = new OpenAI({
 });
 const API_URL = 'https://api.openai.com/v1/chat/completions';
 const API_KEY = process.env.OPENAI_API_KEY;
+const apiUrl=process.env.BACKEND_URL;
 
 
 const supabase = createClient(
@@ -40,7 +41,7 @@ router.get('/auth/google/callback', async (req, res) => {
   const { code } = req.query;
   try {
     const { tokens } = await oauth2Client.getToken(code);
-    res.redirect(`http://localhost:5173/applications?access_token=${tokens.access_token}`);
+    res.redirect(apiUrl +`/applications?access_token=${tokens.access_token}`);
   } catch (error) {
     console.error('Error getting tokens:', error);
     res.status(500).json({ error: 'Failed to authenticate' });
@@ -52,9 +53,7 @@ router.post('/meeting/assist', async (req, res) => {
     const { text, userId, context = {}, fullTranscript = [] } = req.body;
     
     try {
-      console.log('Received request:', { text, context });
-      console.log('ApiKey:', process.env.OPENAI_API_KEY);
-      console.log('Full Transcript:', fullTranscript);
+
       
       // Set streaming headers
       res.setHeader('Content-Type', 'text/event-stream');
@@ -72,7 +71,7 @@ router.post('/meeting/assist', async (req, res) => {
       const interviewContext = {
         type: context.type || 'technical',
         role: context.role || 'Software Engineer',
-        experience: context.experience || 'mid-level',
+        experience: context.experience || 'senior-level',
         technologies: context.technologies || [],
         company: context.company || 'the company',
         interviewStage: context.stage || 'technical interview'
@@ -92,16 +91,17 @@ router.post('/meeting/assist', async (req, res) => {
   - Key Technologies: ${interviewContext.technologies.join(', ')}
   
   Your Role:
-  1. Maintain a natural interview conversation flow
-  2. Respond as an interviewer would in a real ${interviewContext.type} interview
-  3. Show interest in the candidate's experience and technical depth
-  4. Ask relevant follow-up questions when appropriate
-  5. Keep responses professional but conversational
-  6. If technical topics are discussed, ensure accurate and practical responses
+1. Act as if you're in a real interview conversation. The human is the candidate, and you should respond as if you're having a natural back-and-forth discussion.
+2. Treat all inputs (whether questions or statements) as part of the interview flow
+3. If the candidate mentions specific technologies or experiences, engage with follow-up details while maintaining interview context
+4. Keep the tone professional but conversational, similar to a real interview
+5. If appropriate, gently probe for deeper technical understanding or ask relevant follow-up questions
+6. If technical topics are discussed, ensure accurate and practical responses
   
-  Recent Conversation Context:
+  Previous conversation for context:
   ${recentExchanges}
-  
+  Remember: This is a natural conversation flow. The candidate might make statements, ask questions, or provide examples. Respond appropriately while maintaining the interview context.
+
   Guidelines:
   - Maintain the natural flow of conversation
   - Provide specific, relevant examples when discussing technical topics
@@ -144,13 +144,13 @@ router.post('/meeting/assist', async (req, res) => {
         }
   
         // Save the interaction to the database if needed
-        await saveInteraction({
-          userId,
-          input: text,
-          response: accumulatedResponse,
-          context: interviewContext,
-          timestamp: new Date()
-        });
+        // await saveInteraction({
+        //   userId,
+        //   input: text,
+        //   response: accumulatedResponse,
+        //   context: interviewContext,
+        //   timestamp: new Date()
+        // });
   
       } catch (streamError) {
         console.error('Streaming error:', streamError);
