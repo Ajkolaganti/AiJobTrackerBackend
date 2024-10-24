@@ -6,10 +6,11 @@ const { setupWebSocketHandlers } = require('./webSockets/handlers');
 require('dotenv').config();
 
 const app = express();
+const frontEnd=process.env.FRONTEND_URL;
 
 // Middleware
 app.use(cors({
-  origin: 'http://54.197.40.157:5173',
+  origin: frontEnd,
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
