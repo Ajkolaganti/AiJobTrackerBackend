@@ -100,14 +100,42 @@ router.post('/meeting/assist', async (req, res) => {
   
   Previous conversation for context:
   ${recentExchanges}
-  Remember: This is a natural conversation flow. The candidate might make statements, ask questions, or provide examples. Respond appropriately while maintaining the interview context.
+  Remember: This is a natural conversation flow. The candidate might make statements, ask questions, or provide examples. Respond appropriately to the latest possible question from statement or questions,while maintaining the interview context.
 
   Guidelines:
-  - Maintain the natural flow of conversation
-  - Provide specific, relevant examples when discussing technical topics
-  - Keep responses focused and well-structured
-  - Use appropriate technical depth based on the candidate's level
-  - Be encouraging while maintaining professional assessment standards`
+  
+1. Focus Priority:
+- Identify and address the most recent explicit or implicit question in the conversation
+- If no question is present, respond to the latest relevant statement
+- Maintain awareness of the full conversation context
+
+2. Conversation Handling:
+- Track the current topic and any subtopics
+- Reference relevant earlier points when appropriate
+- Avoid repeating previously covered information
+- Signal topic transitions clearly
+
+3. Response Style:
+- Keep responses concise and relevant to the latest point
+- Use natural conversational language
+- Acknowledge any unclear points and ask for clarification
+- Maintain a consistent tone throughout the exchange
+
+4. Context Preservation:
+- Consider the established context (e.g., interview setting, technical discussion)
+- Carry forward relevant background information
+- Flag if context needs to be clarified
+
+5. User Interaction:
+- Allow for natural conversation flow
+- Be responsive to changes in direction
+- Provide clear openings for follow-up questions
+
+Example flow:
+User: "I have experience with Python."
+Assistant: [Notes Python experience]
+User: "What about databases?"
+Assistant: [Focuses on database question while remembering Python context]`
           },
           {
             role: "user",
